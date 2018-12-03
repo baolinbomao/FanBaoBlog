@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>樊宝博客-注册</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+
+    <!--[if lt IE 9]>
+        <script src="jquery-1.9.0.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="jquery-2.0.0.js"></script>
+    <!--<![endif]-->
+
+</head>
+
+<body>
+    <div class="shadow"></div>
+
+    <article>
+        <section class="mainbody">
+            <div class="form-container">
+                <form action="/doRegister/" method="POST">
+                    <div>
+                        <a class="h3 choice" style="border-bottom: red 2px solid;" href="/views/login.html">登陆</a>
+                        <a class="h3 choice" style="border-bottom: red 2px solid;" href="/views/register.html">注册</a>
+                    </div>
+                    <div>
+                        <input type="text" name="username" placeholder="用户名" id="username" class="form-control">
+                    </div>
+                    <div>
+                        <input type="text" name="useremail" placeholder="邮箱" id="useremail" class="form-control">
+                    </div>
+                    <div>
+                        <input type="password" name="uerpass" placeholder="密码" id="uerpass" class="form-control">
+                    </div>
+                    <div>
+                        <input type="submit" name="submit" placeholder="注册" id="submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+
+            <div></div>
+        </section>
+    </article>
+
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
