@@ -71,7 +71,7 @@ exports.saveMessage = function(blog, hostid, content, type, user){
             if(!messlist){
                 var messlist = {
                     authorID: blog.authorID,
-                    messageList = [{
+                    messageList: [{
                         commentID: user._id,
 						commentName: user.name,
 						commentIcon: user.icon,

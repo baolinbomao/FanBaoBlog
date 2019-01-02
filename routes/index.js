@@ -3,6 +3,7 @@ var login = require('./login')
 var blog = require('./blog')
 var message = require('./message')
 var user = require('./userMessage');
+var review = require('./review');
 
 /**
  * 所有路由的接口，分发作用,app是express的实例

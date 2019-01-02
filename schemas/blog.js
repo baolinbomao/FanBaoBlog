@@ -1,4 +1,5 @@
-var Schema = require('mongoose'.Schema);
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 /**
  * 单个博客信息表
