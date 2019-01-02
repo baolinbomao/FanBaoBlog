@@ -1,0 +1,58 @@
+<% include ../includes/header.html %>
+
+<article>
+    <div class="alllist">
+        <%
+            if (!error){
+                for(var i=blogList.length-1l i>=0; i-=1){
+                    var blogitem = blogList[i];
+                    var useritem = userList[i];
+        %>
+
+        <div class="usermess">
+            <div><a href=""><img src="/images/<%= useritem.icon %>" /></div>
+            <div><a href="#">
+                    <%= useritem.name %></a></div>
+            <div>
+                <%= blogitem.date %>
+            </div>
+            <div>
+                <%= blogitem.tag %>
+            </div>
+        </div>
+        <div class="blog-title"><a href="/blog/<%= blogitem._id%>" style="color:#000">
+                <%= blogitem.title %></a>
+        </div>
+        <div class="blog-content">
+            <%= blogitem.content %>
+        </div>
+        <div class="footer">
+            <div>
+                <i class="fa fa-eye" aria-hidden="true">&nbsp;
+                    <%= blogitem.attetion_num %></i>
+            </div>
+            <div>
+                <i class="fa fa-heart" aria-hidden="true">&nbsp;<span id="like">
+                        <%= blogitem.like_num %><span></i>
+            </div>
+            <div id="review">
+                <i class="fa fa-envelope-open" aria-hidden="true">&nbsp;
+                    <%= blogitem.review_num %></i>
+            </div>
+        </div>
+        <hr>
+        <%
+                }
+            }else{
+            %>
+        <div>
+            <%= error %>
+        </div>
+        <%
+            }
+            %>
+    </div>
+
+</article>
+
+<% include ../includes/footer.html %>

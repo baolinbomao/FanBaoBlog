@@ -1,3 +1,6 @@
+/**
+ * 注册
+ */
 var User = require('../models/user');
 
 exports.createUser = function (req, res) {
@@ -19,7 +22,7 @@ function checkRegisterInfo(req, res){
     User.findOne({name: name}, function(err, user){
         if(user === null){
             User.findOne({email: email}, function(err, email){
-                if(email){
+                if(email){     
                     return false;
                 }
             });

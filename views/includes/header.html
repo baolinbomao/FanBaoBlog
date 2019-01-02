@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" type="text/css" href="/static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/body.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/usermess.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/blogList.css">
+    <link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.min.css">
+
+    <style type="text/css">
+        .nav-background {
+            background-color: #295E6A;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部导航 -->
+
+    <nav class="nav-background">
+        <div class="nav-title">
+            <a href="/blogList">樊宝博客</a>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <a href="/blogList">
+                    <li>发现</li>
+                </a>
+                <a href="#">
+                    <li>关注</li>
+                </a>
+                <a href="/messList">
+                    <li>消息
+                        <% if(user) {
+                        if (totalMess){
+                    %>
+                        <span><%= totalMess %></span>
+                    <%
+                        }
+                    }
+                    %>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <% if(!user){
+        %>
+        <div class="nav-login">
+            <div class="login"><a href="/login">登陆</a></div>
+            <div class="register"><a href="/register">注册</a></div>
+        </div>
+        <%
+        }else{
+        %>
+        <div class="nav-user">
+            <div class="user-img">
+                <a href="/myBlog/<%= user._id %>"><img src="/images/<%= user.icon%>" /></a>
+            </div>
+            <a href="/writeBlog" class="btn btn-primary" style="height:40px">写博客</a>
+        </div>
+        <%
+        }
+        %>
+    </nav>
